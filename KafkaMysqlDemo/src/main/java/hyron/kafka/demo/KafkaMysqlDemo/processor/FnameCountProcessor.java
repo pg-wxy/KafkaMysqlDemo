@@ -60,8 +60,6 @@ public class FnameCountProcessor extends AbstractProcessor<String, MyObject> imp
         user.setFcount(user.getFcount() + 1);
         this.kvStore.put(key, user);
         // mysql
-        //int result = userService.add(user);
-        //System.out.println(result);
         insertUser(user);
 
         context().forward(key, value);
